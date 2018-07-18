@@ -36,7 +36,7 @@ roboWS.on('connection', function(socket, upgradeReq) {
 });
 //websocket server
 var httpServ = require('http');
-app = httpServ.createServer().listen(WEBSOCKET_PORT);
+app = httpServ.createServer().listen(WEBSOCKET_PORT,  () => console.log('Listening on port ' + WEBSOCKET_PORT+ '!'));
 var WebSocketServer = require('ws').Server;
 var ws = new WebSocketServer({server: app});
 ws.broadcast = function(data, opts) {
@@ -46,7 +46,6 @@ ws.broadcast = function(data, opts) {
 		}
 	});
 };
-app.listen(WEBSOCKET_PORT, () => console.log('Listening on port ' + WEBSOCKET_PORT+ '!'))
 
 ws.connectionCount = 0;
 ws.on('connection', function(socket, upgradeReq) {
