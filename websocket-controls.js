@@ -46,10 +46,6 @@ ws.broadcast = function(data, opts) {
 		}
 	});
 };
-app.get('/', function (req, res) {
-	res.send('Hello world, I am a chat bot')
-})
-
 app.listen(WEBSOCKET_PORT, () => console.log('Listening on port ' + WEBSOCKET_PORT+ '!'))
 
 ws.connectionCount = 0;
