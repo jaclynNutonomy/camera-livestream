@@ -5,11 +5,12 @@ var fs = require('fs'),
 	http = require('http'),
 	express= require('express'),
 	WebSocket = require('ws'),
+	app = express(),
 	url=require('url');
 
 var WEBSOCKET_PORT = 8085;
 
-express.get('/', function (req, res) {
+app.get('/', function (req, res) {
 	res.send('Hello world, I am a chat bot')
 })
 
