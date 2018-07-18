@@ -1,0 +1,89 @@
+
+<!--
+/*
+ * ----------------------------------------------------------------------------
+ * "THE BEER-WARE LICENSE" (Revision 42):
+ * <joewashear007@gmail.com> wrote this file. As long as you retain this notice you
+ * can do whatever you want with this stuff. If we meet some day, and you think
+ * this stuff is worth it, you can buy me a beer in return Joseph Livecchi
+ * ----------------------------------------------------------------------------
+ */
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no" />
+        <title>BlenderWebController</title>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+        <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+        <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <script>
+                //Change this to the locla ip of your pi
+                var address = "ws://10.101.39.186:8085"
+                $(document).ready(function(){
+                    try {
+                            var s = new WebSocket(address);
+                            s.onopen = function (e) {
+                                $("#Status").slideUp();
+                            };
+                            s.onclose = function (e) {
+                                $("#Status > div > p").text("Not Connected");
+                                $("#Status").slideDown();
+                            };
+                            s.onmessage = function (e) {
+                                $("#templog > li").removeClass("hightlight");
+                                $("#templog").prepend('<li class="list-group-item hightlight"></li>');
+                                $("#templog > li").first()
+                                .hide()
+                                .text( e.data + ' @ ' + (new Date()).toLocaleTimeString() )
+                                .slideDown("slow");
+                            };
+                            s.onerror = function (e) {
+                                $("#Status > div > p").text("Something Died!");
+                                $("#Status").slideDown();
+                            };
+                    } catch (ex) {
+                        $("#Status > div > p").text("Something Died!");
+                        $("#Status").slideDown();
+                    }
+                    $("#close").click( function () {
+                        s.close(1000, "Try to Close");
+                    });
+            });
+            
+        </script>
+        <style>
+            .hightlight{
+                font-size: 2em;
+                font-weight: bold;
+                color: rgb(138, 109, 59);
+                background-color: rgb(252, 248, 227);
+                border-color: rgb(250, 235, 204); 
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="container">
+            <div class="row" id="Status">
+                <div class="alert alert-warning">
+                    <strong>Warning</strong><p></p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="panel panel-primary">
+                    <div class="panel-heading" >
+                        <h2 class="panel-title" style="display:inline;font-size:160%;" >Temperature Log</h2>
+                        <button class="btn btn-warning" type="button" id="close" style="display:inline;float:right;">Close</button>
+                    </div>
+                    <div class="panel-body">
+                        <ul id="templog" class="list-group">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
