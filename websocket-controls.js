@@ -5,14 +5,9 @@ var fs = require('fs'),
 	http = require('http'),
 	express= require('express'),
 	WebSocket = require('ws'),
-	app = express(),
 	url=require('url');
 
 var WEBSOCKET_PORT = 8085;
-
-app.get('/', function (req, res) {
-	res.send('Hello world, I am a chat bot')
-})
 
 //robo control socket
 var roboServ = require('http');
@@ -51,6 +46,12 @@ ws.broadcast = function(data, opts) {
 		}
 	});
 };
+app.get('/', function (req, res) {
+	res.send('Hello world, I am a chat bot')
+})
+
+app.listen(WEBSOCKET_PORT, () => console.log('Listening on port ' + WEBSOCKET_PORT+ '!'))
+
 ws.connectionCount = 0;
 ws.on('connection', function(socket, upgradeReq) {
 	ws.connectionCount++;
