@@ -1,6 +1,7 @@
 #!/usr/bin/python
 import RPi.GPIO as GPIO
 import time
+GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
 control_pins = [11,12,13,15]
 for pin in control_pins:
