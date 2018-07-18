@@ -3,6 +3,7 @@
 module.paths.push('/usr/local/lib/node_modules');
 var fs = require('fs'),
 	http = require('http'),
+	express= require('express'),
 	WebSocket = require('ws'),
 	url=require('url');
 
