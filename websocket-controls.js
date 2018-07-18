@@ -9,6 +9,10 @@ var fs = require('fs'),
 
 var WEBSOCKET_PORT = 8085;
 
+express.get('/', function (req, res) {
+	res.send('Hello world, I am a chat bot')
+})
+
 //robo control socket
 var roboServ = require('http');
 roboApp = roboServ.createServer().listen(8086);
