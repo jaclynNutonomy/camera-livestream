@@ -79,4 +79,3 @@ child = exec('python stepper_con.py',
         }
 	});
 	
- child();
