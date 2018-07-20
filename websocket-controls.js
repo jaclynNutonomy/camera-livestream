@@ -70,7 +70,7 @@ ws.on('connection', function(socket, upgradeReq) {
 });
 var exec = require('child_process').exec, child;
 
-child = exec('python stepper_con.py 172.30.90.83',
+child = exec('python stepper_con.py socket.conn.transport.socket._socket.remoteAddres',
     function (error, stdout, stderr) {
         console.log('stdout: ' + stdout);
         console.log('stderr: ' + stderr);
