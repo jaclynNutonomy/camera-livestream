@@ -5,6 +5,7 @@ import sys
 from stepper_driver import StepperDriver
 from python_websocket import *
 from Queue import Empty
+GPIO.setwarnings(False)
 
 #Stepper 1 gpio pins
 IN1 = 26 #Blue
