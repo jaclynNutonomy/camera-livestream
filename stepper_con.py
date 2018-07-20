@@ -7,10 +7,10 @@ from python_websocket import *
 from Queue import Empty
 
 #Stepper 1 gpio pins
-IN1 = 26 #Blue
-IN2 = 19 #Pink
+IN1 = 11 #Blue
+IN2 = 12 #Pink
 IN3 = 13 #yellow
-IN4 = 6  #Orange
+IN4 = 15 #Orange
 left_right_stepper = StepperDriver(IN1, IN2, IN3, IN4)
 
 #Stepper 2 gpio pins
