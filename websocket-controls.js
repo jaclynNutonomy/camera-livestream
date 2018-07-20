@@ -77,5 +77,6 @@ child = exec('python stepper_con.py',
         if (error !== null) {
              console.log('exec error: ' + error);
         }
-    });
+	});
+	
  child();
