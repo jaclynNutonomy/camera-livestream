@@ -69,6 +69,7 @@ ws.on('connection', function(socket, upgradeReq) {
 	);
 	socket.on('message', function (message) {
 		var msg = JSON.parse(message);
+		ws.broadcast(msg.type);
 		if (msg.type === 'chat') {
 			console.log('broadcasting');
 			ws.broadcast(message);
