@@ -1,19 +1,56 @@
-<!doctype html>
-
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-  <meta charset="utf-8">
+  <meta name="Camera Livestream" content="initial-scale=1"/>
+  <title>edi-cam</title>
+  <style type="text/css">
+    .container {
+      margin-top: 10%;
+      text-align: center;
+    }
 
-  <title>Camera Livestream</title>
-  <meta name="description" content="watch what is happening">
-  <meta name="author" content="watch things">
-
-  <link rel="stylesheet" href="css/styles.css?v=1.0">
+    #canvas-video {
+      width: 640px;
+      height: 480px;
+      border: 1px solid #ccc;
+    }
+  </style>
 </head>
-
 <body>
-  <script src="js/scripts.js"></script>
-  <button onclick="json_button()">Json Message</button>
-  <button onclick="alert_button()">Alert Message</button>
+
+  <div class="container">
+    <!--
+      The canvas size specified here is the "initial" internal resolution. jsmpeg will
+      change this internal resolution to whatever the source provides. The size the
+      canvas is displayed on the website is dictated by the CSS style.
+    -->
+    <canvas id="canvas-video" width="640" height="480"></canvas>
+
+    <input type="button" value="Button" onclick="sendMsg()">
+  </div>
+
+  <script src="/jsmpg.js"></script>
+  <script type="text/javascript">
+    var wsUrl = 'ws://localhost:8085';
+
+    // Show loading notice
+    var canvas = document.getElementById('canvas-video');
+    var ctx = canvas.getContext('2d');
+    ctx.fillStyle = '#333';
+    ctx.fillText('Loading...', canvas.width/2-30, canvas.height/3);
+
+    // Start the player
+    var client = new WebSocket(wsUrl);
+    var player = new jsmpeg(client, { canvas:canvas });
+    client.onopen = function (event) {
+      client.send("Connected to Browser");
+    };
+
+    function sendMsg() {
+      var msg = "Button clicked!";
+      console.log(msg);
+      client2.send(msg);
+    }
+  </script>
 </body>
 </html>

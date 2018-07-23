@@ -1,0 +1,122 @@
+@import '~antd/dist/antd.css';
+
+
+/*Whole Container*/
+
+
+/*Background*/
+#root {
+  position: relative;
+}
+
+#particles-js
+{
+  background-color: #f6ecdf;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  z-index: -1;
+  height: 100%;
+}
+
+/*buttons*/
+.ant-btn-primary {
+    color: #ffffff;
+    background-color: #5CDB95;
+    border-color: #5CDB95;
+}
+.ant-btn-primary:hover {
+    color: #ffffff;
+    background-color: #379683;
+    border-color: #379683;
+}
+.ant-btn-primary:focus {
+    color: #ffffff;
+    background-color: #379683;
+    border-color: #379683;
+}
+.ant-btn-default:hover {
+  color: #5CDB95;
+  border-color: #5CDB95;
+}
+.ant-btn-default:focus {
+  color: #5CDB95;
+  border-color: #5CDB95;
+}
+
+/*inputs*/
+.ant-input {
+    border-color: #5CDB95;
+    outline: 0;
+    -webkit-box-shadow: 0 0 0 2px rgba(87,168,233, 0);
+    box-shadow: 0 0 0 2px rgba(87,168,233, 0);
+}
+
+/*homepage*/
+.title, #description, #listingsTitle {
+  text-align: center;
+  color:#5CDB95;
+}
+#description {
+  font-size:4.5vh;
+  margin-bottom: 10px;
+}
+.title {
+  font-size: 12vh;
+  margin-top: 5px;
+  margin-bottom: -5px;
+}
+.share {
+  color:#379683;
+}
+.motto2 {
+  color:#379683;
+}
+#homeLogo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40vh;
+  height: 40vh;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+/*Footer*/
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #5CDB95;
+  color: #379683;
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 10px;
+
+}
+
+
+
+.rotate90 {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@-moz-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}

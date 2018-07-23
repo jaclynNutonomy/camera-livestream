@@ -18,7 +18,7 @@ def receiveWS(ws, q):
 	except Exception as e:
 		print(e)
 		print "Lost websocket connection!"
-		cont = False;
+		cont = False
         
 def startSocketQueue(ws):
 	socketQ = Queue()
