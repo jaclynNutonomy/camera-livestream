@@ -34,9 +34,8 @@ try:
 	while cont:
 		try:
 			print ("trying")
-			print (socketQ.get(True, 0.01))
 			cmd = json.loads(socketQ.get(True, 0.01))
-			print cmd['val']
+			print ("Value" + str(cmd['val']))
 			if cmd['val']=='panLeftDown':
 				turning_left = True
 				turning_right = False
