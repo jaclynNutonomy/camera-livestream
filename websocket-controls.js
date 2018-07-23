@@ -68,6 +68,19 @@ ws.on('connection', function(socket, upgradeReq) {
 		console.log(msg);
 	});
 });
+
+var PiMotion = require('node-pi-motion');
+
+var options = {
+  verbose: true,
+  throttle: 200
+}
+
+var nodePiMotion = new PiMotion(options);
+
+nodePiMotion.on('DetectedMotion', function() {
+  console.log('Motion detected! Now do something.');
+});
 // var exec = require('child_process').exec, child;
 
 // child = exec('python stepper_con.py' + socket.getHostName(),
