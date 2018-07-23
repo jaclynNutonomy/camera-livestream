@@ -3,7 +3,7 @@ import RPi.GPIO as GPIO
 import time
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
-control_pins = [26,19,13,6]
+control_pins = [22,27,17,4]
 for pin in control_pins:
   GPIO.setup(pin, GPIO.OUT)
   GPIO.output(pin, 0)
