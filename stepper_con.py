@@ -32,7 +32,7 @@ socketQ = getSocket(sys.argv[1])
 
 try:
 	while cont:
-		print cmd['cont']
+		print "cont"
 		try:
 			cmd = json.loads(socketQ.get(True, 0.01))
 			print cmd['val']
@@ -72,6 +72,7 @@ try:
 
 except:
 	cont = False
+	print cont
 	left_right_stepper.resetPins()
 	up_down_stepper.resetPins()
 
