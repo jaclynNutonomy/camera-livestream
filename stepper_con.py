@@ -33,7 +33,8 @@ print ("Ready for commands")
 try:
 	while cont:
 		try:
-			cmd = json.loads(socketQ.get(True, 0.01))
+			cmd = json.loads(socketQ.get())
+			# cmd = json.loads(socketQ.get(True, 0.01))
 			print ("Value" + str(cmd['val']))
 			if cmd['val']=='panLeftDown':
 				turning_left = True
