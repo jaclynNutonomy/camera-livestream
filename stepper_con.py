@@ -32,6 +32,7 @@ socketQ = getSocket(sys.argv[1])
 
 try:
 	while cont:
+		print cmd['cont']
 		try:
 			cmd = json.loads(socketQ.get(True, 0.01))
 			print cmd['val']
