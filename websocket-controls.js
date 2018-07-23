@@ -1,7 +1,5 @@
 #!/usr/bin/node
 //Chat server and Python control server
-import React, { Component } from 'react';
-
 module.paths.push('/usr/local/lib/node_modules');
 var fs = require('fs'),
 	http = require('http'),
