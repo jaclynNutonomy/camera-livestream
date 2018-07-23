@@ -29,7 +29,7 @@ turning_up = False
 turning_down = False
 
 socketQ = getSocket(sys.argv[1])
-
+print ("Ready for commands")
 try:
 	while cont:
 		print "cont"
