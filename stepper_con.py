@@ -33,6 +33,7 @@ print ("Ready for commands")
 try:
 	while cont:
 		try:
+			print (socketQ.get(True, 0.01))
 			cmd = json.loads(socketQ.get(True, 0.01))
 			print cmd['val']
 			if cmd['val']=='panLeftDown':
