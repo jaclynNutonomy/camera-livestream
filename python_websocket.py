@@ -13,6 +13,7 @@ def receiveWS(ws, q):
 	try:
 		while cont:
 			message = ws.recv()
+			print message
 			q.put(message)
 	except Exception as e:
 		print(e)
