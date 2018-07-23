@@ -68,14 +68,14 @@ ws.on('connection', function(socket, upgradeReq) {
 		console.log(msg);
 	});
 });
-// var exec = require('child_process').exec, child;
+var exec = require('child_process').exec, child;
 
-// child = exec('python stepper_con.py 172.30.90.83',
-//     function (error, stdout, stderr) {
-//         console.log('stdout: ' + stdout);
-//         console.log('stderr: ' + stderr);
-//         if (error !== null) {
-//              console.log('exec error: ' + error);
-//         }
-// 	});
+child = exec('python stepper_con.py' + socket.getHostName(),
+    function (error, stdout, stderr) {
+        console.log('stdout: ' + stdout);
+        console.log('stderr: ' + stderr);
+        if (error !== null) {
+             console.log('exec error: ' + error);
+        }
+	});
 	
