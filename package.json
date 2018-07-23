@@ -2,7 +2,7 @@
   "name": "camera-livestream",
   "version": "1.0.0",
   "description": "watch things work",
-  "main": "app.js",
+  "main": "websocket-controls.js",
   "dependencies": {
     "Buffer": "^0.0.0",
     "child_process": "^1.0.2",

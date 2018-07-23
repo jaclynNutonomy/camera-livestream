@@ -1,56 +1,36 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+
+<html lang="en">
 <head>
-  <meta name="Camera Livestream" content="initial-scale=1"/>
-  <title>edi-cam</title>
-  <style type="text/css">
-    .container {
-      margin-top: 10%;
-      text-align: center;
-    }
+  <meta charset="utf-8">
 
-    #canvas-video {
-      width: 640px;
-      height: 480px;
-      border: 1px solid #ccc;
-    }
-  </style>
+  <title>Camera Livestream</title>
+  <meta name="description" content="watch what is happening">
+  <meta name="author" content="watch things">
+
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
 </head>
+
 <body>
-
-  <div class="container">
-    <!--
-      The canvas size specified here is the "initial" internal resolution. jsmpeg will
-      change this internal resolution to whatever the source provides. The size the
-      canvas is displayed on the website is dictated by the CSS style.
-    -->
-    <canvas id="canvas-video" width="640" height="480"></canvas>
-
-    <input type="button" value="Button" onclick="sendMsg()">
-  </div>
-
-  <script src="/jsmpg.js"></script>
   <script type="text/javascript">
-    var wsUrl = 'ws://localhost:8085';
 
-    // Show loading notice
-    var canvas = document.getElementById('canvas-video');
-    var ctx = canvas.getContext('2d');
-    ctx.fillStyle = '#333';
-    ctx.fillText('Loading...', canvas.width/2-30, canvas.height/3);
-
-    // Start the player
-    var client = new WebSocket(wsUrl);
-    var player = new jsmpeg(client, { canvas:canvas });
-    client.onopen = function (event) {
-      client.send("Connected to Browser");
-    };
-
-    function sendMsg() {
-      var msg = "Button clicked!";
+    function tiltBackUp() {
+      var msg = {"val" : "tiltBackUp", "type" : "controlSig"};
       console.log(msg);
-      client2.send(msg);
+      client.send(msg);
     }
   </script>
+
+  <button onclick="tiltBackUp()" class="btn tiltBackUp">tiltBackUp</button>
+  <button class="btn info">Info</button>
+  <button class="btn warning">Warning</button>
+  <button class="btn danger">Danger</button>
+  <button class="btn default">Default</button>
+
+	<!-- Scripts required -->
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.event.drag-2.0.js"></script>
+	<script src="http://localhost:4000/socket.io/socket.io.js"></script>
+	<script type="text/javascript" src="scripts.js"></script>
 </body>
-</html>
+

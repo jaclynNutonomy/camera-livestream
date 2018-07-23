@@ -20,6 +20,67 @@
 }
 
 /*buttons*/
+.btn {
+    color: #ffffff;
+    background-color: #5CDB95;
+    border-color: #5CDB95;
+    background-color: inherit;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+/* Green */
+.tiltBackUp {
+    color: green;
+}
+
+.tiltBackUp:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Blue */
+.info {
+    color: dodgerblue;
+}
+
+.info:hover {
+    background: #2196F3;
+    color: white;
+}
+
+/* Orange */
+.warning {
+    color: orange;
+}
+
+.warning:hover {
+    background: #ff9800;
+    color: white;
+}
+
+/* Red */
+.danger {
+    color: red;
+}
+
+.danger:hover {
+    background: #f44336;
+    color: white;
+}
+
+/* Gray */
+.default {
+    color: black;
+}
+
+.default:hover {
+    background: #e7e7e7;
+}
+
+
 .ant-btn-primary {
     color: #ffffff;
     background-color: #5CDB95;
@@ -44,14 +105,6 @@
   border-color: #5CDB95;
 }
 
-/*inputs*/
-.ant-input {
-    border-color: #5CDB95;
-    outline: 0;
-    -webkit-box-shadow: 0 0 0 2px rgba(87,168,233, 0);
-    box-shadow: 0 0 0 2px rgba(87,168,233, 0);
-}
-
 /*homepage*/
 .title, #description, #listingsTitle {
   text-align: center;
@@ -65,58 +118,4 @@
   font-size: 12vh;
   margin-top: 5px;
   margin-bottom: -5px;
-}
-.share {
-  color:#379683;
-}
-.motto2 {
-  color:#379683;
-}
-#homeLogo {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 40vh;
-  height: 40vh;
-  margin-top: 10px;
-  margin-bottom: 20px;
-}
-
-/*Footer*/
-.footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: #5CDB95;
-  color: #379683;
-  text-align: center;
-  padding-top: 15px;
-  padding-bottom: 10px;
-
-}
-
-
-
-.rotate90 {
-  -webkit-transform: rotate(90deg);
-  -moz-transform: rotate(90deg);
-  -o-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  transform: rotate(90deg);
-}
-
-@keyframes fadein {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-@-moz-keyframes fadein {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-
-/* Safari, Chrome and Opera > 12.1 */
-@-webkit-keyframes fadein {
-  from { opacity: 0; }
-  to   { opacity: 1; }
 }
