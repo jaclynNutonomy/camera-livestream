@@ -63,9 +63,10 @@ try:
 		if turning_right:
 			left_right_stepper.right()
 		if turning_up:
-			up_down_stepper.left()
-		if turning_down:
 			up_down_stepper.right()
+		if turning_down:
+			up_down_stepper.left()
+
 		if not (turning_left or turning_up or turning_down or turning_right):
 			left_right_stepper.setPins([0,0,0,0])
 			up_down_stepper.setPins([0,0,0,0])
