@@ -37,14 +37,14 @@ roboWS.on('connection', function(socket, upgradeReq) {
 //websocket server
 var httpServ = require('http');
 
-// var spawn = require('child_process').spawn; //camera
-// var child = spawn('/opt/vc/bin/raspivid', ['-hf', '-w', '1280', '-h', '1024', '-t', '999999999', '-fps', '20', '-b', '5000000', '-o', '-']); //camera
+var spawn = require('child_process').spawn; //camera
+var child = spawn('/opt/vc/bin/raspivid', ['-hf', '-w', '1280', '-h', '1024', '-t', '999999999', '-fps', '20', '-b', '5000000', '-o', '-']); //camera
 
-// app = httpServ.createServer(function(request, response) {
-// 	child.stdout.pipe(response);
-//   }).listen(WEBSOCKET_PORT,  () => console.log('Listening on port ' + WEBSOCKET_PORT+ '!')); 
+app = httpServ.createServer(function(request, response) {
+	child.stdout.pipe(response);
+  }).listen(WEBSOCKET_PORT,  () => console.log('Listening on port ' + WEBSOCKET_PORT+ '!')); 
 
-app = httpServ.createServer().listen(WEBSOCKET_PORT,  () => console.log('Listening on port ' + WEBSOCKET_PORT+ '!'));
+// app = httpServ.createServer().listen(WEBSOCKET_PORT,  () => console.log('Listening on port ' + WEBSOCKET_PORT+ '!'));
   
 var WebSocketServer = require('ws').Server;
 var ws = new WebSocketServer({server: app});

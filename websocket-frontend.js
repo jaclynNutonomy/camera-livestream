@@ -34,11 +34,11 @@ $(function () {
 
     //add event listener
     up.addEventListener('click', function() {
-        connection.console.log({"valuesssss": "tiltFrontDown", "type": "controlSig"})
+        console.log({"val": "tiltFrontDown", "type": "controlSig"})
     });
 
     down.addEventListener('click', function(event) {
-        console.log({"vals": "tiltBackDown", "type": "controlSig"})
+        console.log({"val": "tiltBackDown", "type": "controlSig"})
       });
 
     left.addEventListener('click', function(event) {
