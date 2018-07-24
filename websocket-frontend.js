@@ -37,21 +37,21 @@ $(function () {
 
     //add event listener
     up.addEventListener('click', function(event) {
-        console.log({'var': 'tiltFrontDown', 'type': 'controlSig'})
+        console.log({"var": "tiltFrontDown", "type": "controlSig"})
     });
 
     down.addEventListener('click', function(event) {
-        console.log({'var': 'tiltBackDown', 'type': 'controlSig'})
+        console.log({"var": "tiltBackDown", "type": "controlSig"})
       });
 
     left.addEventListener('click', function(event) {
-        console.log({'var': 'panLeftDown', 'type': 'controlSig'})
+        console.log({"var": "panLeftDown", "type": "controlSig"})
     });
     right.addEventListener('click', function(event) {
-    console.log({'var': 'panRightDown', 'type': 'controlSig'})
+    console.log({"var": "panRightDown", "type": "controlSig"})
     });
     stop.addEventListener('click', function(event) {
-    console.log({'var': 'tiltFrontDown', 'type': 'controlSig'})
+    console.log({"var": "tiltFrontDown", "type": "controlSig"})
     });
  
     // most important part - incoming messages
@@ -63,7 +63,7 @@ $(function () {
       try {
         var json = JSON.parse(message);
       } catch (e) {
-        console.log('Invalid JSON: ', message.data);
+        console.log('Invalid JSON: ', message);
         return;
       }
       // NOTE: if you're not sure about the JSON structure
