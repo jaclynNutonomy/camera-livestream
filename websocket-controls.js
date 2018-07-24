@@ -1,6 +1,5 @@
 #!/usr/bin/node
 //Chat server and Python control server
-"use strict";
 
 module.paths.push('/usr/local/lib/node_modules');
 var fs = require('fs'),
