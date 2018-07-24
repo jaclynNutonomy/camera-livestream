@@ -20,7 +20,6 @@ $(function () {
     // open connection
     var connection = new WebSocket('ws://localhost:8085');
     connection.onopen = function () {
-      // first we want users to enter their names
       input.removeAttr('disabled');
     };
     connection.onerror = function (error) {
@@ -30,11 +29,11 @@ $(function () {
            + 'connection or the server is down.'
       }));
     };
-    var up = document.getElementById('up');
-    var down= document.getElementById('down');
-    var left= document.getElementById('left');
-    var right= document.getElementById('right');
-    var stop= document.getElementById('stop');
+    var up = document.getElementById('btn up');
+    var down= document.getElementById('btn down');
+    var left= document.getElementById('btn left');
+    var right= document.getElementById('btn right');
+    var stop= document.getElementById('btn stop');
 
     //add event listener
     up.addEventListener('click', function(event) {
@@ -52,7 +51,7 @@ $(function () {
     console.log({'var': 'panRightDown', 'type': 'controlSig'})
     });
     stop.addEventListener('click', function(event) {
-    console.log({'var': 'stop', 'type': 'controlSig'})
+    console.log({'var': 'tiltFrontDown', 'type': 'controlSig'})
     });
  
     // most important part - incoming messages
@@ -62,7 +61,7 @@ $(function () {
       // we should make sure that the massage is not chunked or
       // otherwise damaged.
       try {
-        var json = JSON.parse(message.data);
+        var json = JSON.parse(message);
       } catch (e) {
         console.log('Invalid JSON: ', message.data);
         return;
