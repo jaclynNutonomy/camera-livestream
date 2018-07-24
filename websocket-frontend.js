@@ -33,7 +33,7 @@ $(function () {
     var stop= document.getElementById('btn stop');
 
     //add event listener
-    up.addEventListener('click', function(event) {
+    up.addEventListener('click', function() {
         console.log({"val": "tiltFrontDown", "type": "controlSig"})
     });
 
