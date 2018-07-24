@@ -56,6 +56,9 @@ try:
 				turning_up = False
 			if cmd['val']=='tiltBackUp':
 				turning_down = False
+			if cmd['val']=='stop':
+				left_right_stepper.setPins([0,0,0,0])
+				up_down_stepper.setPins([0,0,0,0])
 		except Empty:
 			pass
 		if turning_left:
