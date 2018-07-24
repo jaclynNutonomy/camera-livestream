@@ -37,21 +37,21 @@ $(function () {
 
     //add event listener
     up.addEventListener('click', function(event) {
-        console.log({"var": "tiltFrontDown", "type": "controlSig"})
+        console.log({"val": "tiltFrontDown", "type": "controlSig"})
     });
 
     down.addEventListener('click', function(event) {
-        console.log({"var": "tiltBackDown", "type": "controlSig"})
+        console.log({"val": "tiltBackDown", "type": "controlSig"})
       });
 
     left.addEventListener('click', function(event) {
-        console.log({"var": "panLeftDown", "type": "controlSig"})
+        console.log({"val": "panLeftDown", "type": "controlSig"})
     });
     right.addEventListener('click', function(event) {
-    console.log({"var": "panRightDown", "type": "controlSig"})
+    console.log({"val": "panRightDown", "type": "controlSig"})
     });
     stop.addEventListener('click', function(event) {
-    console.log({"var": "tiltFrontDown", "type": "controlSig"})
+    console.log({"val": "tiltFrontDown", "type": "controlSig"})
     });
  
     // most important part - incoming messages
