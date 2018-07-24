@@ -11,10 +11,10 @@ var fs = require('fs'),
 
 var WEBSOCKET_PORT = 8085;
 
-
 //robo control socket
 var roboServ = require('http');
-roboApp = roboServ.createServer().listen(8086,() => console.log('Listening on port 8086 !'));
+roboApp = roboServ.createServer();
+roboApp= roboApp.listen(8086,() => console.log('Listening on port 8086 !'));
 var roboSocketServer = require('ws').Server;
 var roboWS = new roboSocketServer({server: roboApp});
 roboWS.broadcast = function(data, opts) {
@@ -81,15 +81,3 @@ ws.on('connection', function(socket, upgradeReq) {
 		console.log(msg);
 	});
 });
-
-// var exec = require('child_process').exec, child;
-
-// child = exec('python stepper_con.py' + socket.getHostName(),
-//     function (error, stdout, stderr) {
-//         console.log('stdout: ' + stdout);
-//         console.log('stderr: ' + stderr);
-//         if (error !== null) {
-//              console.log('exec error: ' + error);
-//         }
-// 	});
-	
