@@ -38,7 +38,7 @@ $(function () {
     });
 
     down.addEventListener('click', function(event) {
-        console.log({"val": "tiltBackDown", "type": "controlSig"})
+        console.log({"vals": "tiltBackDown", "type": "controlSig"})
       });
 
     left.addEventListener('click', function(event) {
