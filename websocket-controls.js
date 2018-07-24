@@ -11,7 +11,7 @@ var fs = require('fs'),
 var WEBSOCKET_PORT = 8085;
 
 var roboServ = require('http');
-	roboApp = roboServ.createServer().listen(8086,() => console.log('Listening on port 8086 !'));
+	roboApp = roboServ.createServer().listen(8086,() => console.log('Listening on port 8086!'));
 var roboSocketServer = require('ws').Server;
 var roboWS = new roboSocketServer({server: roboApp});
 roboWS.broadcast = function(data, opts) {
