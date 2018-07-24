@@ -10,7 +10,6 @@ var fs = require('fs'),
 
 var WEBSOCKET_PORT = 8085;
 
-
 //robo control socket
 var roboServ = require('http');
 roboApp = roboServ.createServer().listen(8086,() => console.log('Listening on port ' + 8086+ '!'));
