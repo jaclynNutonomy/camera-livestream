@@ -11,10 +11,8 @@ var fs = require('fs'),
 
 var WEBSOCKET_PORT = 8085;
 
-//robo control socket
 var roboServ = require('http');
-roboApp = roboServ.createServer();
-roboApp= roboApp.listen(8086,() => console.log('Listening on port 8086 !'));
+	roboApp = roboServ.createServer().listen(8086,() => console.log('Listening on port 8086 !'));
 var roboSocketServer = require('ws').Server;
 var roboWS = new roboSocketServer({server: roboApp});
 roboWS.broadcast = function(data, opts) {
@@ -24,6 +22,7 @@ roboWS.broadcast = function(data, opts) {
 		}
 	});
 };
+
 roboWS.connectionCount = 0;
 roboWS.on('connection', function(socket, upgradeReq) {
 	roboWS.connectionCount++;
