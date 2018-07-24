@@ -19,103 +19,83 @@
   height: 100%;
 }
 
+.title, #description, #listingsTitle {
+    text-align: center;
+    color:#5CDB95;
+  }
+  #description {
+    font-size:4.5vh;
+    margin-bottom: 10px;
+  }
+  .title {
+    font-size: 8vh;
+    margin-top: 5px;
+    margin-bottom: -1px;
+  }
+
 /*buttons*/
-.btn\ {
+.center-div{
+    align-content: center;
+    margin: 0 auto;  
+}
+
+.btn {
     color: #ffffff;
     background-color: #5CDB95;
     border-color: #5CDB95;
     background-color: inherit;
-    padding: 14px 28px;
-    font-size: 16px;
+    padding: 7px 14px;
+    font-size: 13px;
     cursor: pointer;
-    display: inline-block;
+    /* display: inline-block; */
 }
 
 /* Green */
-.tiltBackUp {
+.down {
     color: green;
 }
 
-.tiltBackUp:hover {
+.down:hover {
     background-color: #4CAF50;
     color: white;
 }
 
 /* Blue */
-.info {
+.up {
     color: dodgerblue;
 }
 
-.info:hover {
+.up:hover {
     background: #2196F3;
     color: white;
 }
 
 /* Orange */
-.warning {
+.right {
     color: orange;
 }
 
-.warning:hover {
+.right:hover {
     background: #ff9800;
     color: white;
 }
 
 /* Red */
-.danger {
+.stop {
     color: red;
 }
 
-.danger:hover {
+.stop:hover {
     background: #f44336;
     color: white;
 }
 
 /* Gray */
-.default {
+.left {
     color: black;
 }
 
-.default:hover {
+.left:hover {
     background: #e7e7e7;
 }
 
-
-.ant-btn-primary {
-    color: #ffffff;
-    background-color: #5CDB95;
-    border-color: #5CDB95;
-}
-.ant-btn-primary:hover {
-    color: #ffffff;
-    background-color: #379683;
-    border-color: #379683;
-}
-.ant-btn-primary:focus {
-    color: #ffffff;
-    background-color: #379683;
-    border-color: #379683;
-}
-.ant-btn-default:hover {
-  color: #5CDB95;
-  border-color: #5CDB95;
-}
-.ant-btn-default:focus {
-  color: #5CDB95;
-  border-color: #5CDB95;
-}
-
-/*homepage*/
-.title, #description, #listingsTitle {
-  text-align: center;
-  color:#5CDB95;
-}
-#description {
-  font-size:4.5vh;
-  margin-bottom: 10px;
-}
-.title {
-  font-size: 12vh;
-  margin-top: 5px;
-  margin-bottom: -5px;
-}

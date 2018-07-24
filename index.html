@@ -8,7 +8,7 @@
   <meta name="description" content="watch what is happening">
   <meta name="author" content="watch things">
 
-  <link rel="stylesheet" href="css/styles.css?v=1.0">
+  <link rel="stylesheet" href="app.css">
   <style>
     * { font-family:tahoma; font-size:12px; padding:0px;margin:0px;}
     p { line-height:18px; }
@@ -23,26 +23,19 @@
   </style>
 </head>
 
-<body>
+<body class = "particles-js" >
+    <h1 class= "title">Camera Livestream</h1>
+  <!-- Scripts required -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.event.drag-2.0.js"></script>
+    <script type="text/javascript" src="scripts.js"></script>
+    <script src="./websocket-frontend.js"></script>
 
-  <!-- <div id="content"></div> -->
-  <div>
-    <input type="button" id="btn up" disabled="disabled" />
-    <input type="button" id="btn down" disabled="disabled" />
-    <input type="button" id="btn left" disabled="disabled" />
-    <input type="button" id="btn right" disabled="disabled" />
-    <input type="button" id="btn stop" disabled="disabled" />
+  <div class="center-div">
+    <input class= "btn up" type="button" id="btn up" value="Up" disabled="disabled" />
+    <input class= "btn down" type="button" id="btn down" value="Down" disabled="disabled" />
+    <input class= "btn left" type="button" id="btn left" value="Left" disabled="disabled" />
+    <input class= "btn right" type="button" id="btn right" value="Right" disabled="disabled" />
+    <input class= "btn stop" type="button" id="btn stop" value="Stop" disabled="disabled" />
   </div>
-
-  <!-- <button class="btn tiltBackDown" onclick="tiltBackDown()">Down</button>
-  <button class="btn tildFrontDown" onclick="tiltFrontDown()">Up</button>
-  <button class="btn panRightDown" onclick="panRightDown()">Left</button>
-  <button class="btn panLeftDown" onclick="panLeftDown()">Right</button>
-  <button class="btn stop" onclick="stop()">Stop</button> -->
- 
-	<!-- Scripts required -->
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-	<script type="text/javascript" src="js/jquery.event.drag-2.0.js"></script>
-  <script type="text/javascript" src="scripts.js"></script>
-  <script src="./websocket-frontend.js"></script>
 </body>
