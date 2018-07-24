@@ -34,7 +34,7 @@ $(function () {
 
     //add event listener
     up.addEventListener('click', function() {
-        connection.console.log({"val": "tiltFrontDown", "type": "controlSig"})
+        connection.console.log({"valuesssss": "tiltFrontDown", "type": "controlSig"})
     });
 
     down.addEventListener('click', function(event) {
@@ -100,6 +100,7 @@ $(function () {
     //     }
     //   }
     // });
+
     /**
      * This method is optional. If the server wasn't able to
      * respond to the in 3 seconds then show some error message 
