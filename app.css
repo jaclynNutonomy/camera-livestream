@@ -32,7 +32,10 @@
     margin-top: 5px;
     margin-bottom: -1px;
   }
-
+.vid{
+    align-content: center; 
+    margin: 0 auto; 
+}
 /*buttons*/
 .center-div{
     align-content: center;
