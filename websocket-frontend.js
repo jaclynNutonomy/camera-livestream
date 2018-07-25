@@ -38,17 +38,17 @@ $(function () {
     });
 
     down.addEventListener('click', function(event) {
-        console.log({"val": "tiltBackDown", "type": "controlSig"})
+        connection.send(JSON.stringify({"val": "tiltBackDown", "type": "controlSig"}))
       });
 
     left.addEventListener('click', function(event) {
-        console.log({"val": "panLeftDown", "type": "controlSig"})
+        connection.send(JSON.stringify({"val": "panLeftDown", "type": "controlSig"}))
     });
     right.addEventListener('click', function(event) {
-    console.log({"val": "panRightDown", "type": "controlSig"})
+    connection.send(({"val": "panRightDown", "type": "controlSig"}))
     });
     stop.addEventListener('click', function(event) {
-    console.log({"val": "tiltFrontDown", "type": "controlSig"})
+    connection.send(({"val": "stop", "type": "controlSig"}))
     });
  
     // // most important part - incoming messages
