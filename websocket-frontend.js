@@ -34,7 +34,7 @@ $(function () {
 
     //add event listener
     up.addEventListener('click', function() {
-        connection.send({"val": "tiltFrontDown", "type": "controlSig"})
+        connection.send(JSON.stringify({"val": "tiltFrontDown", "type": "controlSig"}))
     });
 
     down.addEventListener('click', function(event) {
