@@ -45,10 +45,10 @@ $(function () {
         connection.send(JSON.stringify({"val": "panLeftDown", "type": "controlSig"}))
     });
     right.addEventListener('click', function(event) {
-      connection.send(({"val": "panRightDown", "type": "controlSig"}))
+      connection.send(JSON.stringify({"val": "panRightDown", "type": "controlSig"}))
     });
     stop.addEventListener('click', function(event) {
-      connection.send(({"val": "stop", "type": "controlSig"}))
+      connection.send(JSON.stringify({"val": "stop", "type": "controlSig"}))
     });
  
     // // most important part - incoming messages
