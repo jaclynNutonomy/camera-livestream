@@ -33,9 +33,7 @@ print ("Ready for commands")
 try:
 	while cont:
 		try:
-			# cmd = json.loads(socketQ.get())
 			cmd = json.loads(socketQ.get(True, 0.01))
-			print ("Value" + str(cmd['val']))
 			if cmd['val']=='panLeftDown':
 				turning_left = True
 				turning_right = False
@@ -57,8 +55,10 @@ try:
 			if cmd['val']=='tiltBackUp':
 				turning_down = False
 			if cmd['val']=='stop':
-				left_right_stepper.setPins([0,0,0,0])
-				up_down_stepper.setPins([0,0,0,0])
+				turning_left = False; 
+				turning_right = False; 
+				turning_down = False; 
+				turning_up = False; 
 		except Empty:
 			pass
 		if turning_left:
