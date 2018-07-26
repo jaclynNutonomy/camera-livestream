@@ -18,7 +18,7 @@ $(function () {
       return;
     }
     // open connection
-    var connection = new WebSocket('ws://172.30.90.83:8085');
+    var connection = new WebSocket('ws://10.101.39.186:8085');
     connection.onerror = function (error) {
       // just in there were some problems with connection...
       content.html($('<p>', {
