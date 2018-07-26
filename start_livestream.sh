@@ -1,4 +1,4 @@
-#! /bin/bash
+#! /bin/sh
 sudo service motion restart
 sudo service motion start
 node camera-livestream/websocket-controls &
