@@ -6,7 +6,10 @@ def startWebSocket(server_address):
 	connected= False
 	while (connected == False):
 		ws = websocket.WebSocket()
-		ws.connect('ws://'+server_address+':8086')
+		try: 
+			ws.connect('ws://'+server_address+':8086')
+		except:
+			continue
 		print "Connected to web socket server"
 		connected= True
 	return ws
