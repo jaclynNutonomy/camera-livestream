@@ -9,15 +9,7 @@
   position: relative;
 }
 
-#particles-js
-{
-  background-color: #f6ecdf;
-  background-size: cover;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  z-index: -1;
-  height: 100%;
-}
+
 
 .title, #description, #listingsTitle {
     text-align: center;
