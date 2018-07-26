@@ -1,4 +1,4 @@
-#! /bin/sh
+#! /bin/bash
 sudo service motion restart
 sudo service motion start
  xterm -title "node" -hold -e node.sh &

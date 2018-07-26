@@ -1,2 +1,2 @@
-#! /bin/sh
+#! /bin/bash
 python -m SimpleHTTPServer 8084
