@@ -8,6 +8,7 @@ def startWebSocket(server_address):
 		ws = websocket.WebSocket()
 		ws.connect('ws://'+server_address+':8086')
 		print "Connected to web socket server"
+		connected= True
 	return ws
 
 def receiveWS(ws, q):
