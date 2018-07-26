@@ -1,7 +1,7 @@
 #! /bin/sh
 sudo service motion restart
 sudo service motion start
-python camera-livestream/webserver.py &
+python3 camera-livestream/webserver.py &
 python camera-livestream/stepper_con.py 10.101.39.186 &
 node camera-livestream/websocket-controls
 
